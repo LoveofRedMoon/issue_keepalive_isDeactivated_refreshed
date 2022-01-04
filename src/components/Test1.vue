@@ -16,5 +16,5 @@ watch(() => route.query.id, () => {
 <template>
     <p>Test1</p>
 </template>
-<style lang="less">
+<style>
 </style>

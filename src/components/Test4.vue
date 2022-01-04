@@ -1,20 +1,21 @@
 <script lang="ts">
 import { defineComponent, getCurrentInstance, watch } from 'vue';
-import { useRoute } from 'vue-router';
 
 export default defineComponent({
-    name: 'Test2'
+    name: 'Test4'
 })
 </script>
 <script setup lang="ts">
 const instance = getCurrentInstance()
-const route = useRoute()
-watch(() => route.query.id, () => {
-    console.log('Test2 isDeactivated', instance?.isDeactivated)
+const props = defineProps({
+    num: Number
 })
+watch(() => props.num, () => {
+    console.log('Test4 isDeactivated', instance?.isDeactivated)
+}, { flush: 'post' })
 </script>
 <template>
-    <p>Test2</p>
+    <p>Test4 <span>{{num}}</span></p>
 </template>
 <style>
 </style>
